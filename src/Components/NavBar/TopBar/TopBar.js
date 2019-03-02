@@ -18,18 +18,18 @@ import {
 
 
 class TopBar extends Component {
-  constructor(props) {
-    super(props);
+  
+  state = {
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
+    name:'ysf'
   }
-  toggle() {
+ 
+  
+  inputChange = (e) =>{
     this.setState({
-      isOpen: !this.state.isOpen
-    });
+   
+name : e.target.value
+    })
   }
     render() {
       return (
@@ -38,19 +38,18 @@ class TopBar extends Component {
         <div>
       
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Test</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <NavbarBrand href="/">LOGO Here</NavbarBrand>
+          <NavbarToggler />
+          <Collapse navbar>
             <Nav className="ml-auto" navbar>
+             
+             
               <NavItem>
-                <NavLink href="/components/">Page1</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Page2</NavLink>
+                <NavLink href="https://github.com/reactstrap/reactstrap">yoaussef.boujlal</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Sign out
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
@@ -69,6 +68,7 @@ class TopBar extends Component {
           </Collapse>
         </Navbar>
         <Breadcrumb />
+      
       </div>
       
       );
